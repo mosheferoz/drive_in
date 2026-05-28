@@ -388,11 +388,11 @@ function Hero() {
             קניית רכבים לתיקון ופירוק
             <span className="hero-rotator mt-1 block text-[var(--brand-gold-light)]">
               <span className="hero-rotator__track">
-                <span className="hero-rotator__item">שרידי רכבים,</span>
+                <span className="hero-rotator__item">שרידי רכבים</span>
                 <span className="hero-rotator__item">משאיות מסחריות</span>
                 <span className="hero-rotator__item">אופנועים</span>
                 <span className="hero-rotator__item" aria-hidden>
-                  שרידי רכבים,
+                  שרידי רכבים
                 </span>
               </span>
             </span>
@@ -1135,7 +1135,7 @@ function Footer() {
             className="h-14 w-auto bg-stone-100 p-1.5 rounded"
           />
           <p className="mt-5 text-sm leading-relaxed max-w-md">
-            דרייב אין ס.ע בע״מ – הכתובת שלכם לקנייה ומכירה של שרידי רכבים,
+            דרייב אין ס.ע בע״מ – הכתובת שלכם לקנייה ומכירה של שרידי רכבים
             משאיות, רכבים מסחריים ואופנועים לתיקון ולפירוק.
           </p>
           <p className="mt-4 text-xs text-stone-500">
@@ -1216,7 +1216,7 @@ function Footer() {
       <div className="border-t border-stone-800">
         <div className="mx-auto max-w-7xl px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-stone-500">
           <p>© {new Date().getFullYear()} דרייב אין ס.ע בע״מ. כל הזכויות שמורות.</p>
-          <p>Drive In S.O LTD – קונים ומוכרים שרידי רכבים, משאיות, מסחריות ואופנועים</p>
+          <p>Drive In S.O LTD – קונים ומוכרים שרידי רכבים משאיות, מסחריות ואופנועים</p>
         </div>
       </div>
     </footer>

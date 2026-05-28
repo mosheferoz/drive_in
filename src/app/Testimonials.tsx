@@ -232,7 +232,7 @@ export default function Testimonials() {
             {TESTIMONIALS.map((t) => (
               <article
                 key={t.name + t.city}
-                className="relative flex min-w-full shrink-0 snap-start flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-stone-200 sm:min-w-[calc((100%-1.25rem)/2)] md:min-w-[calc((100%-2.5rem)/3)] lg:min-w-[calc((100%-3.75rem)/4)]"
+                className="relative flex min-w-0 shrink-0 grow-0 basis-full snap-start flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-stone-200 sm:basis-[calc((100%-1.25rem)/2)] md:basis-[calc((100%-2.5rem)/3)] lg:basis-[calc((100%-3.75rem)/4)]"
               >
                 <svg
                   viewBox="0 0 24 24"
