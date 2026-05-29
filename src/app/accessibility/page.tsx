@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "הצהרת נגישות | דרייב אין ס.ע",
+  title: "הצהרת נגישות",
   description:
     "הצהרת הנגישות של אתר דרייב אין ס.ע – רמת ההנגשה, אופן השימוש בתפריט הנגישות, מגבלות ידועות ופרטי רכז הנגישות לפנייה ובקשות.",
+  alternates: { canonical: "/accessibility" },
 };
 
 const PHONE = "050-3428013";

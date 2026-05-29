@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "./Nav";
 import Testimonials from "./Testimonials";
+import { buildFaqJsonLd } from "./site-config";
 
 /* ------------------------------------------------------------------ */
 /*  Inline SVG icons — keeps the page in a single file, no extra deps */
@@ -266,7 +267,8 @@ const Icon = {
 /* ------------------------------------------------------------------ */
 
 const PHONE = "050-3428013";
-const PHONE_TEL = "+972503428013";
+const OFFICE_PHONE = "054-65475027";
+const OFFICE_PHONE_TEL = "+9725465475027";
 const WHATSAPP_LINK = `https://wa.me/972503428013`;
 const EMAIL = "Driveinltd@gmail.com";
 const ADDRESS = "רחוב אנוש 2, ראשון לציון";
@@ -328,8 +330,8 @@ function Header() {
             <Icon.Whatsapp className="h-5 w-5" />
           </a>
           <a
-            href={`tel:${PHONE_TEL}`}
-            aria-label={`התקשרו אלינו: ${PHONE}`}
+            href={`tel:${OFFICE_PHONE_TEL}`}
+            aria-label={`טלפון משרד: ${OFFICE_PHONE}`}
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-l from-[var(--brand-gold)] to-[var(--brand-gold-light)] py-1.5 ps-1.5 pe-3.5 text-sm font-bold text-stone-900 shadow-md shadow-[var(--brand-gold)]/30 ring-1 ring-inset ring-white/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[var(--brand-gold)]/40 active:translate-y-0 active:scale-[0.97] md:py-2 md:pe-4"
           >
             {/* Attention pulse — mobile only, where this is the primary CTA */}
@@ -340,7 +342,7 @@ function Header() {
             <span className="relative grid h-8 w-8 shrink-0 place-items-center rounded-full bg-stone-900 text-[var(--brand-gold-light)] shadow-inner transition-transform duration-300 group-hover:scale-110 group-active:scale-95">
               <Icon.Phone className="h-4 w-4" />
             </span>
-            <span className="relative tracking-wide" dir="ltr">{PHONE}</span>
+            <span className="relative tracking-wide" dir="ltr">{OFFICE_PHONE}</span>
           </a>
         </div>
       </div>
@@ -424,13 +426,13 @@ function Hero() {
               </span>
             </a>
             <a
-              href={`tel:${PHONE_TEL}`}
+              href={`tel:${OFFICE_PHONE_TEL}`}
               className="group inline-flex flex-1 sm:flex-none items-center justify-center gap-2 sm:gap-2.5 whitespace-nowrap rounded-full border border-white/25 bg-white/10 px-4 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 sm:px-8 sm:py-4 sm:text-base"
             >
               <Icon.Phone className="h-5 w-5 shrink-0 text-[var(--brand-gold-light)] transition-transform duration-300 group-hover:-rotate-12" />
               <span>
                 <span className="sm:hidden">חייגו</span>
-                <span className="hidden sm:inline">חייגו: {PHONE}</span>
+                <span className="hidden sm:inline">חייגו: {OFFICE_PHONE}</span>
               </span>
             </a>
           </div>
@@ -919,6 +921,10 @@ const FAQS = [
 function Faq() {
   return (
     <section id="faq" className="py-20 md:py-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqJsonLd(FAQS)) }}
+      />
       <div className="mx-auto max-w-3xl px-4 md:px-8">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -979,15 +985,15 @@ function Contact() {
 
           <div className="mt-8 space-y-4">
             <a
-              href={`tel:${PHONE_TEL}`}
+              href={`tel:${OFFICE_PHONE_TEL}`}
               className="flex items-center gap-4 group"
             >
               <span className="grid h-12 w-12 place-items-center rounded-full bg-[var(--brand-gold)]/15 text-[var(--brand-gold-light)] group-hover:bg-[var(--brand-gold)] group-hover:text-stone-900 transition-colors">
                 <Icon.Phone className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm text-stone-400">טלפון</p>
-                <p className="font-bold text-white">{PHONE}</p>
+                <p className="text-sm text-stone-400">טלפון משרד</p>
+                <p className="font-bold text-white">{OFFICE_PHONE}</p>
               </div>
             </a>
             <a
@@ -1108,8 +1114,8 @@ function Contact() {
           </button>
           <p className="text-xs text-stone-500 text-center">
             או חייגו ישירות:{" "}
-            <a href={`tel:${PHONE_TEL}`} className="font-semibold text-[var(--brand-brown)]">
-              {PHONE}
+            <a href={`tel:${OFFICE_PHONE_TEL}`} className="font-semibold text-[var(--brand-brown)]">
+              {OFFICE_PHONE}
             </a>
           </p>
         </form>
@@ -1184,8 +1190,8 @@ function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2.5">
               <Icon.Phone className="h-4 w-4 mt-0.5 text-[var(--brand-gold)] shrink-0" />
-              <a href={`tel:${PHONE_TEL}`} className="hover:text-white">
-                {PHONE}
+              <a href={`tel:${OFFICE_PHONE_TEL}`} className="hover:text-white">
+                טלפון משרד: {OFFICE_PHONE}
               </a>
             </li>
             <li className="flex items-start gap-2.5">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Heebo } from "next/font/google";
 import "./globals.css";
 import Accessibility from "./Accessibility";
+import { SITE_URL, siteConfig, businessJsonLd, websiteJsonLd } from "./site-config";
 
 const heebo = Heebo({
   variable: "--font-heebo",
@@ -9,10 +10,16 @@ const heebo = Heebo({
   display: "swap",
 });
 
+const TITLE = "דרייב אין ס.ע | קונים שרידי רכבים, משאיות, מסחריות ואופנועים";
+
 export const metadata: Metadata = {
-  title: "דרייב אין ס.ע | קונים שרידי רכבים, משאיות, מסחריות ואופנועים",
-  description:
-    "דרייב אין – חברה ישראלית מובילה בקנייה ומכירה של שרידי רכבים, משאיות, רכבים מסחריים ואופנועים לתיקון ולפירוק. מעל 15 שנות ניסיון, 20,000 מ\"ר מתחם תפעולי, פינוי מיידי ותשלום במקום.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: TITLE,
+    template: "%s | דרייב אין ס.ע",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
   keywords: [
     "קניית שרידי רכב",
     "קניית רכב לפירוק",
@@ -23,6 +30,35 @@ export const metadata: Metadata = {
     "רכב שרידים",
     "רכבים מסחריים",
   ],
+  alternates: { canonical: "/" },
+  formatDetection: { telephone: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  openGraph: {
+    type: "website",
+    locale: "he_IL",
+    url: SITE_URL,
+    siteName: siteConfig.name,
+    title: TITLE,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1717,
+        height: 916,
+        alt: "דרייב אין ס.ע – קונים שרידי רכבים, משאיות, מסחריות ואופנועים",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
 };
 
 // Applies persisted accessibility settings to <html> before paint, so users
@@ -44,6 +80,15 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans bg-white text-stone-900">
         <script dangerouslySetInnerHTML={{ __html: a11yBootScript }} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
 
         <a href="#main-content" className="skip-link">
           דילוג לתוכן הראשי
