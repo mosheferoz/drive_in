@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "./Nav";
 import Testimonials from "./Testimonials";
+import ContactForm from "./ContactForm";
 import { buildFaqJsonLd } from "./site-config";
 
 /* ------------------------------------------------------------------ */
@@ -363,8 +364,9 @@ function Hero() {
         alt="גרר עם רכב לפירוק - דרייב אין"
         fill
         className="object-cover object-[center_80%] -z-10 md:hidden"
-        sizes="100vw"
-        preload
+        sizes="(max-width: 767px) 100vw, 1px"
+        loading="eager"
+        fetchPriority="high"
       />
       {/* Desktop (landscape) hero image */}
       <Image
@@ -372,8 +374,9 @@ function Hero() {
         alt="גרר עם רכב לפירוק - דרייב אין"
         fill
         className="hidden md:block object-cover object-center -z-10"
-        sizes="100vw"
-        preload
+        sizes="(min-width: 768px) 100vw, 1px"
+        loading="eager"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 hero-overlay -z-10" aria-hidden />
 
@@ -1034,91 +1037,8 @@ function Contact() {
           </div>
         </div>
 
-        {/* Right — form card */}
-        <form
-          action={`mailto:${EMAIL}`}
-          method="post"
-          encType="text/plain"
-          className="bg-white p-7 md:p-9 rounded-2xl shadow-2xl space-y-4 text-stone-900"
-        >
-          <h3 className="text-xl font-extrabold">השאירו פרטים ונחזור אליכם</h3>
-          <div className="gold-divider w-16" />
-
-          <div>
-            <label htmlFor="name" className="block text-sm font-semibold mb-1.5">
-              שם מלא *
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              placeholder="הזינו את שמכם"
-              className="w-full rounded-md border border-stone-300 bg-stone-50 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand-gold)] focus:border-transparent"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="phone" className="block text-sm font-semibold mb-1.5">
-              טלפון *
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              placeholder="050-1234567"
-              className="w-full rounded-md border border-stone-300 bg-stone-50 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand-gold)] focus:border-transparent"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="vehicle" className="block text-sm font-semibold mb-1.5">
-              סוג הרכב
-            </label>
-            <select
-              id="vehicle"
-              name="vehicle"
-              defaultValue=""
-              className="w-full rounded-md border border-stone-300 bg-stone-50 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand-gold)] focus:border-transparent"
-            >
-              <option value="" disabled>
-                בחרו סוג רכב
-              </option>
-              <option value="private">רכב פרטי / שרידים</option>
-              <option value="truck">משאית</option>
-              <option value="commercial">רכב מסחרי / טנדר</option>
-              <option value="motorcycle">אופנוע / קטנוע</option>
-              <option value="scrap">רכב לגריטה</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="message" className="block text-sm font-semibold mb-1.5">
-              פרטים נוספים
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={3}
-              placeholder="ספרו לנו על הרכב – יצרן, דגם, שנה, מצב..."
-              className="w-full rounded-md border border-stone-300 bg-stone-50 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[var(--brand-gold)] focus:border-transparent resize-y"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full rounded-md bg-[var(--brand-gold)] px-6 py-3.5 font-bold text-stone-900 text-base hover:bg-[var(--brand-gold-light)] transition-colors shadow-md"
-          >
-            שלחו פרטים – נחזור אליכם תוך זמן קצר
-          </button>
-          <p className="text-xs text-stone-500 text-center">
-            או חייגו ישירות:{" "}
-            <a href={`tel:${OFFICE_PHONE_TEL}`} className="font-semibold text-[var(--brand-brown)]">
-              {OFFICE_PHONE}
-            </a>
-          </p>
-        </form>
+        {/* Right — form card (client component, submits via AJAX, no redirect) */}
+        <ContactForm officePhone={OFFICE_PHONE} officePhoneTel={OFFICE_PHONE_TEL} />
       </div>
     </section>
   );
