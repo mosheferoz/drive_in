@@ -373,8 +373,18 @@ function Hero() {
         src="/images/hero_section.png"
         alt="גרר עם רכב לפירוק - דרייב אין"
         fill
-        className="hidden md:block object-cover object-center -z-10"
+        className="hidden md:block 2xl:hidden object-cover object-center -z-10"
         sizes="(min-width: 768px) 100vw, 1px"
+        loading="eager"
+        fetchPriority="high"
+      />
+      {/* Wide screens (panoramic) hero image */}
+      <Image
+        src="/images/hero_section_wide.png"
+        alt="גרר עם רכב לפירוק - דרייב אין"
+        fill
+        className="hidden 2xl:block object-cover object-center -z-10"
+        sizes="(min-width: 1536px) 100vw, 1px"
         loading="eager"
         fetchPriority="high"
       />
