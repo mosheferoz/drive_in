@@ -132,7 +132,7 @@ function ToggleButton({
         className={
           "grid h-5 w-5 shrink-0 place-items-center rounded-full border text-[10px] font-bold " +
           (active
-            ? "border-[var(--brand-gold)] bg-[var(--brand-gold)] text-stone-900"
+            ? "border-[var(--brand-gold)] gold-surface text-stone-900"
             : "border-stone-300 text-transparent")
         }
       >

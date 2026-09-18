@@ -208,7 +208,7 @@ export default function Testimonials() {
     <section className="bg-stone-50 py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mb-12 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold)]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest gold-text">
             לקוחות מספרים
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -278,7 +278,7 @@ export default function Testimonials() {
                   aria-current={page === i}
                   className={
                     page === i
-                      ? "h-2.5 w-6 rounded-full bg-[var(--brand-gold)] transition-all"
+                      ? "h-2.5 w-6 rounded-full gold-surface transition-all"
                       : "h-2.5 w-2.5 rounded-full bg-stone-300 transition-all hover:bg-stone-400"
                   }
                 />

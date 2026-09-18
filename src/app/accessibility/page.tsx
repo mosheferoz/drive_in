@@ -60,7 +60,7 @@ export default function AccessibilityStatement() {
       </header>
 
       <article className="mx-auto max-w-3xl px-4 py-12 md:px-8 md:py-16">
-        <p className="text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold)]">
+        <p className="text-sm font-semibold uppercase tracking-widest gold-text">
           נגישות
         </p>
         <h1 className="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-stone-900">

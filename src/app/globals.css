@@ -10,6 +10,55 @@
   --brand-gold: #c9962b;
   --brand-gold-light: #e0b34a;
   --brand-cream: #f5f0e6;
+  /* Gold as a METAL, not a flat colour: champagne specular where the light
+     lands, bronze core shadow, warm bounce, dark contact edge.
+
+     --gold-metal is for TYPE (painted through the glyphs by `.gold-text`).
+     Its stops are authored in em from the top of each line box so the ramp
+     lands on the letter band — cap line to baseline — whatever the line-height
+     (Heebo: cap ≈ 0.71em, baseline ≈ 0.95em into a 1.2em content box).
+     The flat ends paint the Hebrew overshoots (ל above, ן ך ף ץ ק below). */
+  --gold-band-top: 0.3em;
+  --gold-band-top: calc((1lh - 1.2em) / 2 + 0.21em);
+  --gold-metal:
+    linear-gradient(
+      102deg,
+      rgba(255, 250, 236, 0) 37%,
+      rgba(255, 250, 236, 0.2) 46%,
+      rgba(255, 250, 236, 0) 54%
+    ),
+    linear-gradient(
+      180deg,
+      #f5dfa4 0,
+      #f5dfa4 calc(var(--gold-band-top) + 0.03em),
+      #eecb80 calc(var(--gold-band-top) + 0.121em),
+      #e5b85a calc(var(--gold-band-top) + 0.254em),
+      #b98d3a calc(var(--gold-band-top) + 0.38em),
+      #e1b75a calc(var(--gold-band-top) + 0.47em),
+      #f0d892 calc(var(--gold-band-top) + 0.59em),
+      #d0a44c calc(var(--gold-band-top) + 0.673em),
+      #9c762c calc(var(--gold-band-top) + 0.73em),
+      #9c762c 100%
+    );
+  /* --gold-surface is the same metal for FILLED shapes — buttons, tags, dots.
+     A narrower band than the type ramp: these carry dark labels, so the plate
+     stays one readable value edge to edge instead of running into bronze. */
+  --gold-surface:
+    linear-gradient(
+      102deg,
+      rgba(255, 250, 236, 0) 34%,
+      rgba(255, 250, 236, 0.16) 45%,
+      rgba(255, 250, 236, 0) 56%
+    ),
+    linear-gradient(
+      180deg,
+      #ecca82 0%,
+      #dcaf58 26%,
+      #c69843 50%,
+      #d2a650 62%,
+      #dfb96a 82%,
+      #b68c3d 100%
+    );
 }
 
 @theme inline {
@@ -89,6 +138,61 @@ body {
       rgba(15, 10, 5, 0.55) 45%,
       rgba(15, 10, 5, 0) 75%
     );
+  }
+}
+
+/* ================================================================== */
+/*  Gold as metal — shared utilities                                  */
+/* ================================================================== */
+
+/* Gold-leaf TYPE. `color` stays as the flat fallback; the ramp is painted
+   through the glyphs only where background-clip: text is supported. One tile
+   per line (1lh) so multi-line text gets the ramp on every line, no-repeat
+   inside the tile so descenders never hit a second tile's champagne top.
+   The drop-shadow is the contact edge that seats the leaf on a photo — a
+   shadow, not text-stroke, because Heebo's Hebrew is drawn as overlapping
+   contours a stroke would outline inside the letter. */
+.gold-text,
+.hero-rotator__item {
+  color: var(--brand-gold-light);
+  background-image: var(--gold-metal);
+  background-repeat: repeat-y;
+  background-size: 100% 1.5em;
+  background-size: 100% 1lh;
+  filter:
+    drop-shadow(0 0 0.014em rgba(74, 44, 6, 0.55))
+    drop-shadow(0 0.014em 0.012em rgba(74, 44, 6, 0.45));
+}
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .gold-text,
+  .hero-rotator__item {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Plated SURFACE for filled shapes. Colour first so the flat token shows if
+   the image cannot paint. Hover darkens the ramp instead of swapping it — a
+   flat hover reads as the metal being replaced by paint. */
+.gold-surface {
+  background-color: var(--brand-gold);
+  background-image: var(--gold-surface);
+}
+.gold-surface:hover {
+  filter: brightness(0.93) saturate(1.04);
+}
+
+/* Forced colours hands the text the user's palette; clipping would eat it. */
+@media (forced-colors: active) {
+  .gold-text,
+  .hero-rotator__item {
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+    filter: none;
+  }
+  .gold-surface {
+    background-image: none;
   }
 }
 

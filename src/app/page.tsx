@@ -333,7 +333,7 @@ function Header() {
           <a
             href={`tel:${OFFICE_PHONE_TEL}`}
             aria-label={`טלפון משרד: ${OFFICE_PHONE}`}
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-l from-[var(--brand-gold)] to-[var(--brand-gold-light)] py-1.5 ps-1.5 pe-3.5 text-sm font-bold text-stone-900 shadow-md shadow-[var(--brand-gold)]/30 ring-1 ring-inset ring-white/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[var(--brand-gold)]/40 active:translate-y-0 active:scale-[0.97] md:py-2 md:pe-4"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full gold-surface py-1.5 ps-1.5 pe-3.5 text-sm font-bold text-stone-900 shadow-md shadow-[var(--brand-gold)]/30 ring-1 ring-inset ring-white/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[var(--brand-gold)]/40 active:translate-y-0 active:scale-[0.97] md:py-2 md:pe-4"
           >
             {/* Attention pulse — mobile only, where this is the primary CTA */}
             <span
@@ -401,14 +401,17 @@ function Hero() {
       <div className="absolute inset-0 hero-overlay -z-10" aria-hidden />
 
       <div className="mx-auto max-w-7xl px-4 md:px-8 pt-10 md:pt-14 lg:pt-16 pb-20 md:pb-28 lg:pb-32">
-        <div className="max-w-xl text-white">
-          <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-[var(--brand-gold)]/40 bg-white/5 px-4 py-2 backdrop-blur-sm shadow-sm shadow-black/20">
+        {/* Badge — pinned to the left edge of the hero (justify-end under RTL) */}
+        <div className="mb-5 flex justify-end text-white">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-[var(--brand-gold)]/40 bg-white/5 px-4 py-2 backdrop-blur-sm shadow-sm shadow-black/20">
             <Icon.Shield className="h-5 w-5 shrink-0 text-[var(--brand-gold-light)]" />
             <span className="text-sm font-semibold tracking-wide text-stone-100">
-              <span className="font-extrabold text-[var(--brand-gold-light)]">מעל 15 שנות</span>{" "}
+              <span className="font-extrabold gold-text">מעל 15 שנות</span>{" "}
               ניסיון בענף הרכב
             </span>
           </div>
+        </div>
+        <div className="max-w-xl text-white">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
             קניית רכבים לתיקון ופירוק
             <span className="hero-rotator mt-1 block text-[var(--brand-gold-light)]">
@@ -436,7 +439,7 @@ function Hero() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex flex-1 sm:flex-none items-center justify-center gap-2 sm:gap-2.5 overflow-hidden whitespace-nowrap rounded-full bg-[var(--brand-gold)] px-4 py-3 text-sm font-bold text-stone-900 shadow-lg shadow-[var(--brand-gold)]/30 ring-1 ring-inset ring-white/20 transition-all duration-300 hover:bg-[var(--brand-gold-light)] hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[var(--brand-gold)]/40 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold-light)] focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 sm:px-8 sm:py-4 sm:text-base"
+              className="group relative inline-flex flex-1 sm:flex-none items-center justify-center gap-2 sm:gap-2.5 overflow-hidden whitespace-nowrap rounded-full gold-surface px-4 py-3 text-sm font-bold text-stone-900 shadow-lg shadow-[var(--brand-gold)]/30 ring-1 ring-inset ring-white/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[var(--brand-gold)]/40 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-gold-light)] focus-visible:ring-offset-2 focus-visible:ring-offset-stone-900 sm:px-8 sm:py-4 sm:text-base"
             >
               <span
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
@@ -544,7 +547,7 @@ function About() {
     <section id="about" className="py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold)]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest gold-text">
             אודות החברה
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
@@ -599,7 +602,7 @@ function About() {
               </p>
             </div>
           </div>
-          <div className="absolute -bottom-6 -start-6 hidden md:block rounded-xl bg-[var(--brand-gold)] px-6 py-4 shadow-lg">
+          <div className="absolute -bottom-6 -start-6 hidden md:block rounded-xl gold-surface px-6 py-4 shadow-lg">
             <p className="text-3xl font-extrabold text-stone-900 leading-none">15+</p>
             <p className="text-sm font-semibold text-stone-900">שנות ניסיון</p>
           </div>
@@ -646,7 +649,7 @@ function Services() {
     <section id="services" className="bg-stone-50 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mb-14 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold)]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest gold-text">
             מה אנחנו קונים
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -700,11 +703,11 @@ function Stats() {
               className="flex flex-col items-center bg-[var(--brand-brown-dark)] px-4 py-9 text-center transition duration-200 hover:brightness-125"
             >
               <p className="flex items-baseline justify-center gap-2 leading-none">
-                <span className="text-4xl md:text-5xl font-extrabold tracking-tight text-[var(--brand-gold-light)]">
+                <span className="text-4xl md:text-5xl font-extrabold tracking-tight gold-text">
                   {s.value}
                 </span>
                 {s.unit && (
-                  <span className="text-lg md:text-xl font-semibold text-[var(--brand-gold)]">
+                  <span className="text-lg md:text-xl font-semibold gold-text">
                     {s.unit}
                   </span>
                 )}
@@ -742,7 +745,7 @@ function Compound() {
 
       <div className="mx-auto max-w-7xl px-4 md:px-8 py-24 md:py-32">
         <div className="max-w-xl text-white">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold-light)]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest gold-text">
             המתחם שלנו
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
@@ -757,13 +760,13 @@ function Compound() {
 
           <div className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
             <div>
-              <p className="text-3xl font-extrabold text-[var(--brand-gold-light)] leading-none">
+              <p className="text-3xl font-extrabold gold-text leading-none">
                 20,000 <span className="text-xl">מ״ר</span>
               </p>
               <p className="mt-1.5 text-sm text-stone-300">מתחם תפעולי</p>
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[var(--brand-gold-light)] leading-none">
+              <p className="text-3xl font-extrabold gold-text leading-none">
                 5,000+
               </p>
               <p className="mt-1.5 text-sm text-stone-300">כלי רכב בשנה</p>
@@ -822,8 +825,8 @@ function Process() {
           {STEPS.map((s) => (
             <div key={s.n} className="text-center">
               <div className="relative mx-auto mb-5 h-24 w-24">
-                <span className="absolute inset-0 grid place-items-center text-7xl font-extrabold text-[var(--brand-gold)] leading-none">
-                  {s.n}
+                <span className="absolute inset-0 grid place-items-center text-7xl font-extrabold leading-none">
+                  <span className="gold-text">{s.n}</span>
                 </span>
               </div>
               <h3 className="text-lg font-bold">{s.title}</h3>
@@ -867,7 +870,7 @@ function BuyOrSell() {
     <section className="bg-stone-50 py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8 grid lg:grid-cols-2 gap-8">
         <div className="bg-white p-8 md:p-10 rounded-2xl ring-1 ring-stone-200 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold)]">
+          <p className="text-sm font-semibold uppercase tracking-widest gold-text">
             מה אנחנו קונים?
           </p>
           <h3 className="mt-2 text-2xl md:text-3xl font-extrabold">
@@ -887,7 +890,7 @@ function BuyOrSell() {
         </div>
 
         <div className="bg-stone-900 text-white p-8 md:p-10 rounded-2xl shadow-lg">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold-light)]">
+          <p className="text-sm font-semibold uppercase tracking-widest gold-text">
             מה אנחנו מוכרים?
           </p>
           <h3 className="mt-2 text-2xl md:text-3xl font-extrabold">
@@ -995,7 +998,7 @@ function Contact() {
       <div className="mx-auto max-w-6xl px-4 md:px-8 grid lg:grid-cols-2 gap-12 items-start">
         {/* Left — invite copy */}
         <div className="text-white">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[var(--brand-gold-light)]">
+          <p className="text-sm font-semibold uppercase tracking-widest gold-text">
             יצירת קשר
           </p>
           <h2 className="mt-2 text-3xl md:text-4xl font-extrabold leading-tight">

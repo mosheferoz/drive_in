@@ -155,7 +155,7 @@ export default function ContactForm({
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-md bg-[var(--brand-gold)] px-6 py-3.5 font-bold text-stone-900 text-base hover:bg-[var(--brand-gold-light)] transition-colors shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full rounded-md gold-surface px-6 py-3.5 font-bold text-stone-900 text-base transition-[filter] shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "submitting"
           ? "שולח..."
