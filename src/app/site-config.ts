@@ -12,7 +12,7 @@ export const siteConfig = {
   email: "Driveinltd@gmail.com",
   streetAddress: "רחוב אנוש 2",
   city: "ראשון לציון",
-  ogImage: "/images/hero_section.png",
+  ogImage: "/images/hero_og.jpg",
   logo: "/images/logo.JPG",
 } as const;
 

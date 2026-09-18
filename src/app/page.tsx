@@ -358,29 +358,39 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-stone-900">
-      {/* Mobile (portrait) hero image */}
+      {/* Mobile (portrait 9:19.5) hero image */}
       <Image
-        src="/images/hero_section_mobile.png"
+        src="/images/hero_mobile.jpg"
         alt="גרר עם רכב לפירוק - דרייב אין"
         fill
-        className="object-cover object-[center_80%] -z-10 md:hidden"
+        className="object-cover object-[center_62%] -z-10 md:hidden"
         sizes="(max-width: 767px) 100vw, 1px"
         loading="eager"
         fetchPriority="high"
       />
-      {/* Desktop (landscape) hero image */}
+      {/* Tablet (4:3) hero image */}
       <Image
-        src="/images/hero_section.png"
+        src="/images/hero_tablet.jpg"
         alt="גרר עם רכב לפירוק - דרייב אין"
         fill
-        className="hidden md:block 2xl:hidden object-cover object-center -z-10"
-        sizes="(min-width: 768px) 100vw, 1px"
+        className="hidden md:block lg:hidden object-cover object-[center_60%] -z-10"
+        sizes="(min-width: 768px) and (max-width: 1023px) 100vw, 1px"
         loading="eager"
         fetchPriority="high"
       />
-      {/* Wide screens (panoramic) hero image */}
+      {/* Desktop (landscape ~2.3:1) hero image */}
       <Image
-        src="/images/hero_section_wide.png"
+        src="/images/hero_desktop.jpg"
+        alt="גרר עם רכב לפירוק - דרייב אין"
+        fill
+        className="hidden lg:block 2xl:hidden object-cover object-center -z-10"
+        sizes="(min-width: 1024px) 100vw, 1px"
+        loading="eager"
+        fetchPriority="high"
+      />
+      {/* Wide screens (panoramic ~3:1) hero image */}
+      <Image
+        src="/images/hero_wide.jpg"
         alt="גרר עם רכב לפירוק - דרייב אין"
         fill
         className="hidden 2xl:block object-cover object-center -z-10"
