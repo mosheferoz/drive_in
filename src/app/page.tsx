@@ -267,7 +267,6 @@ const Icon = {
 /*  Page                                                              */
 /* ------------------------------------------------------------------ */
 
-const PHONE = "050-3428013";
 const OFFICE_PHONE = "054-6547502";
 const OFFICE_PHONE_TEL = "+972546547502";
 const WHATSAPP_LINK = `https://wa.me/972546547502`;
@@ -1033,7 +1032,7 @@ function Contact() {
               </span>
               <div>
                 <p className="text-sm text-stone-400">וואטסאפ</p>
-                <p className="font-bold text-white">{PHONE}</p>
+                <p className="font-bold text-white">{OFFICE_PHONE}</p>
               </div>
             </a>
             <a
@@ -1145,7 +1144,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-white"
               >
-                {PHONE}
+                {OFFICE_PHONE}
               </a>
             </li>
             <li className="flex items-start gap-2.5">
