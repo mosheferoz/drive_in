@@ -268,9 +268,9 @@ const Icon = {
 /* ------------------------------------------------------------------ */
 
 const PHONE = "050-3428013";
-const OFFICE_PHONE = "054-65475027";
-const OFFICE_PHONE_TEL = "+9725465475027";
-const WHATSAPP_LINK = `https://wa.me/972503428013`;
+const OFFICE_PHONE = "054-6547502";
+const OFFICE_PHONE_TEL = "+972546547502";
+const WHATSAPP_LINK = `https://wa.me/972546547502`;
 const EMAIL = "Driveinltd@gmail.com";
 const ADDRESS = "רחוב אנוש 2, ראשון לציון";
 

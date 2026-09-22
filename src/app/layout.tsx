@@ -103,7 +103,7 @@ export default function RootLayout({
         {/* Floating actions — outside #acc-canvas so they are never re-based by
             a CSS filter (which would break position:fixed). */}
         <a
-          href="https://wa.me/972503428013"
+          href="https://wa.me/972546547502"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="צרו קשר בוואטסאפ"
