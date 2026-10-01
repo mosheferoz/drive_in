@@ -9,8 +9,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/accessibility" },
 };
 
-const PHONE = "050-3428013";
-const PHONE_TEL = "+972503428013";
 const EMAIL = "Driveinltd@gmail.com";
 const ADDRESS = "רחוב אנוש 2, ראשון לציון";
 const UPDATED = "28 במאי 2026";
@@ -134,15 +132,6 @@ export default function AccessibilityStatement() {
             הבאות:
           </p>
           <ul className="mt-2 space-y-2.5">
-            <li>
-              <span className="font-semibold text-stone-900">טלפון:</span>{" "}
-              <a
-                href={`tel:${PHONE_TEL}`}
-                className="font-semibold text-[var(--brand-brown)] underline underline-offset-2"
-              >
-                {PHONE}
-              </a>
-            </li>
             <li>
               <span className="font-semibold text-stone-900">דוא״ל:</span>{" "}
               <a

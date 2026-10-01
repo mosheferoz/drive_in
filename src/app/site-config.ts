@@ -8,7 +8,6 @@ export const siteConfig = {
   alternateName: "Drive In S.O LTD",
   description:
     'דרייב אין – חברה ישראלית מובילה בקנייה ומכירה של שרידי רכבים, משאיות, רכבים מסחריים ואופנועים לתיקון ולפירוק. מעל 15 שנות ניסיון, 20,000 מ"ר מתחם תפעולי, פינוי מיידי ותשלום במקום.',
-  phone: "+972503428013",
   email: "Driveinltd@gmail.com",
   streetAddress: "רחוב אנוש 2",
   city: "ראשון לציון",
@@ -28,7 +27,6 @@ export const businessJsonLd = {
   alternateName: siteConfig.alternateName,
   description: siteConfig.description,
   url: SITE_URL,
-  telephone: siteConfig.phone,
   email: siteConfig.email,
   image: `${SITE_URL}${siteConfig.ogImage}`,
   logo: `${SITE_URL}${siteConfig.logo}`,
